@@ -38,7 +38,7 @@ const showOk =() =>{
 
     let tag;
     //비교 연산자 === == 차이
-    if( n === usern){
+    if( n == usern){
         tag = "o";
     }else{
         tag = "x";
