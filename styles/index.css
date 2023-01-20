@@ -21,6 +21,11 @@ main {
     align-items: center;
    
 }
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 button{
     width: 150px;
@@ -28,13 +33,12 @@ button{
     font-size: 20px;
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 50px;
     background-color: #EADDFF;
     color: #6750A4;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    
 
 }
 button:active, button:hover{
