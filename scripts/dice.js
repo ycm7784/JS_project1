@@ -9,14 +9,46 @@
 //     document.getElementById("content").append(btnl);
 
 // }
+//전역변수
+let n ;
 
-
-
+//주사위 번호 확인
 const showDice =() =>{
-    const n = Math.floor(Math.random() *6)+1
-    const s1 = document.querySelector("#s1")
-    s1.innerHTML =`<img src="./images/dice/${n}.png"/>`
-    console.log(n)
+    n = Math.floor(Math.random() *6)+1
+    // const s1 = document.querySelector("#s1")
+    // s1.innerHTML =`<img src="./images/dice/${n}.png"/>`
+      console.log(n)
+    show("none","block","none","none","block");
+}
+
+//주사위 번호 결과 확인
+const showOk =() =>{
+    const radios = document.querySelectorAll("input[type = radio]");
+    // 사용자가 선택한 숫자
+    let usern;
+    for(let r of radios){
+        if(r.checked){
+            // 숫자로 이루어진 문자열을 숫자로 변환
+            usern =r.value ;
+            break;
+          }
+        }
+     
+    console.log(n,usern)
+
+    let tag;
+    //비교 연산자 === == 차이
+    if( n === usern){
+        tag = "o";
+    }else{
+        tag = "x";
+    }
+
+    document.querySelector("form").reset();
+
+    document.querySelector("#s1").innerHTML =`<img src="./images/dice/${n}.png"/>`
+    document.querySelector("#s3").innerHTML =`<img src="./images/dice/${tag}.png"/>`
+    show("block","none","block","block","none");
 }
 
 // 요소 보이기 함수
